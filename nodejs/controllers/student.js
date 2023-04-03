@@ -1,12 +1,11 @@
 async function getAllStudents(req, res) {
-    res.json({
-        status: 200,
-        msg: 'get all student'
+    res.status(HttpStatusCode.OK).json({
+        message: "get all student"
     })
 }
 
 async function getStudentById(req, res) {
-    res.status(200).json({
+    res.status(HttpStatusCode.OK).json({
         name: "demo"
     })
 }

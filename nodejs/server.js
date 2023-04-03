@@ -1,6 +1,10 @@
 import express from "express"
 //đọc biến môi trường(tỏng file .env)
 import * as dotenv from 'dotenv'
+
+//connect database
+import connect from "./database/database.js"
+
 import {
     usersRoute,
     studentRoute
@@ -18,5 +22,6 @@ app.get('/', (req, res) => {
     res.send('response root route test')
 })
 app.listen(port, async() => {
+    await connect()
     console.log(`Listening on port: ${port}`);
 })
